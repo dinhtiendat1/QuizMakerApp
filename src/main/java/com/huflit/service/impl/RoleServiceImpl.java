@@ -25,7 +25,7 @@ public class RoleServiceImpl implements RoleService{
 		List<RoleDto> dtos = new ArrayList<RoleDto>();
 
 		for (Role entity : entities) {
-			dtos.add(new RoleDto(entity.getId(), entity.getName(), entity.getDescription()));
+			dtos.add(new RoleDto(entity.getId(), entity.getDescription(), entity.getName()));
 		}
 
 		return dtos;
