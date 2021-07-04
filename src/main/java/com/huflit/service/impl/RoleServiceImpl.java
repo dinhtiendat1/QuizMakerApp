@@ -34,7 +34,7 @@ public class RoleServiceImpl implements RoleService{
 	@Override
 	public RoleDto findById(int id) {
 		Role entity = roleRepository.getById(id);
-		return new RoleDto(entity.getId(), entity.getName(), entity.getDescription());
+		return new RoleDto(entity.getId(), entity.getDescription(), entity.getName());
 	}
 
 	@Override
