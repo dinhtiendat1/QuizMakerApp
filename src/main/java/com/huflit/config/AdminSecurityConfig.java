@@ -51,6 +51,8 @@ public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
 		.authorizeRequests()
 		.antMatchers("/api/admin/login")
 		.permitAll()
+		.antMatchers("/api/admin/login/createAdmin")
+		.permitAll()
 		.antMatchers("/api/admin/**")
 		.hasRole("ADMIN")
 		.anyRequest()
