@@ -14,6 +14,8 @@ public interface UserService {
 	void update(int id, UserDto dto);
 
 	void add(RegisterDto dto);
+	
+	void addAdmin(RegisterDto dto);
 
 	void delete(int id);
 }

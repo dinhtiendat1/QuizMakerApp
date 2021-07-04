@@ -60,6 +60,17 @@ public class UserServiceImpl implements UserService {
 		}
 		
 	}
+	
+	@Override
+	public void addAdmin(RegisterDto dto) {
+		if(userRepository.findByEmail(dto.getEmail()) == null) {
+			String hashed = BCrypt.hashpw(dto.getPassword(), BCrypt.gensalt());
+			User entity = new User(dto.getEmail(), dto.getFullname(), hashed, "default avatar", dto.getPhone(), 1);
+			
+			userRepository.save(entity);
+		}
+		
+	}
 
 	@Override
 	public void delete(int id) {
