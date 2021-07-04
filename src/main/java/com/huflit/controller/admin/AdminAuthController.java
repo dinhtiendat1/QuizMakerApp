@@ -44,16 +44,16 @@ public class AdminAuthController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
-	@GetMapping("/createAdmin")
-	public Object createAdmin() {
-		try {
-			RegisterDto dto = new RegisterDto("admin@gmail.com", "Đinh Tiến Đạt", "123456", "0927269501");
-			userService.add(dto);
-			return new ResponseEntity<Object>(HttpStatus.OK);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
-	}
+//	@GetMapping("/createAdmin")
+//	public Object createAdmin() {
+//		try {
+//			RegisterDto dto = new RegisterDto("admin@gmail.com", "Đinh Tiến Đạt", "123456", "0927269501");
+//			userService.add(dto);
+//			return new ResponseEntity<Object>(HttpStatus.OK);
+//			
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+//	}
 }
