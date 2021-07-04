@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.huflit.dto.LoginDto;
 import com.huflit.dto.RegisterDto;
+import com.huflit.dto.RoleDto;
 import com.huflit.dto.UserDto;
 import com.huflit.service.AuthService;
+import com.huflit.service.RoleService;
 import com.huflit.service.UserService;
 
 @RestController
@@ -26,6 +28,9 @@ public class AdminAuthController {
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	private RoleService roleService;
 
 	@PostMapping("")
 	public Object post(@RequestBody LoginDto loginDto) {
