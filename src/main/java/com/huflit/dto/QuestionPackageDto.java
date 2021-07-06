@@ -18,16 +18,16 @@ public class QuestionPackageDto extends QuestionDto {
 	
 	private String content;
 	
-	private int examId;
+//	private int examId;
 	
 	private int questionTypeId;
 	
 	private List<AnswerDto> answers;
 
-	public QuestionPackageDto(String content, int examId, int questionTypeId, List<AnswerDto> answers) {
+	public QuestionPackageDto(String content, int questionTypeId, List<AnswerDto> answers) {
 		super();
 		this.content = content;
-		this.examId = examId;
+//		this.examId = examId;
 		this.questionTypeId = questionTypeId;
 		this.answers = answers;
 	} 

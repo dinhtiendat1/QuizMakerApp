@@ -1,5 +1,7 @@
 package com.huflit.dto;
 
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,18 +11,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExamDto {
+public class ExamQuestionDto {
 
-	private int id;
+	private int examId;
 	
-	private String title;
-	
-	private int time;
-	
-	private int categoryId;
-	
-	private String lastUpdate;
-	
-	private String createDate;
-	
+	private int questionId;
 }

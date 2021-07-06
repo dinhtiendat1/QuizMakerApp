@@ -41,8 +41,11 @@ public class Exam {
 	@Column(name = "category_id")
 	private int categoryId;
 	
-	@Column(name = "last_update")
-	private Date lastUpdate;
+	@Column(name = "last_update", length = 8)
+	private String lastUpdate;
+	
+	@Column(name = "create_date", length = 8)
+	private String createDate;
 	
 	@ManyToOne
 	@JoinColumn(name = "category_id", insertable = false, updatable = false)
@@ -52,12 +55,12 @@ public class Exam {
 	private List<UserExam> userExams;
 	
 	@OneToMany(mappedBy = "exam", fetch = FetchType.LAZY)
-	private List<Question> questions;
+	private List<ExamQuestion> examQuestions;
 	
 	@OneToMany(mappedBy = "exam", fetch = FetchType.LAZY)
 	private List<QuestionTypeExam> questionTypeExams;
 
-	public Exam(int id, String title, int time, int categoryId, Date lastUpdate) {
+	public Exam(int id, String title, int time, int categoryId, String lastUpdate) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -65,13 +68,24 @@ public class Exam {
 		this.categoryId = categoryId;
 		this.lastUpdate = lastUpdate;
 	}
+	
+	public Exam(int id, String title, int time, int categoryId, String lastUpdate, String createDate) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.time = time;
+		this.categoryId = categoryId;
+		this.lastUpdate = lastUpdate;
+		this.createDate = createDate;
+	}
 
-	public Exam(String title, int time, int categoryId, Date lastUpdate) {
+	public Exam(String title, int time, int categoryId, String lastUpdate, String createDate) {
 		super();
 		this.title = title;
 		this.time = time;
 		this.categoryId = categoryId;
 		this.lastUpdate = lastUpdate;
+		this.createDate = createDate;
 	}
 	
 	

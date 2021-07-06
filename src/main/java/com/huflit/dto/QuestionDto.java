@@ -16,15 +16,13 @@ public class QuestionDto {
 	private int id;
 	
 	private String content;
-	
-	private int examId;
-	
+		
 	private int questionTypeId;
 
-	public QuestionDto(String content, int examId, int questionTypeId) {
+	public QuestionDto(String content, int questionTypeId) {
 		super();
 		this.content = content;
-		this.examId = examId;
+//		this.examId = examId;
 		this.questionTypeId = questionTypeId;
 	}
 	

@@ -49,11 +49,7 @@ public class AdminSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable()
 		.antMatcher("/api/admin/**") //link gui len phai bat dau voi /api thi moi duoc chap nhan
 		.authorizeRequests()
-		.antMatchers("/api/admin/login")
-		.permitAll()
-		.antMatchers("/api/admin/users")
-		.permitAll()
-		.antMatchers("/api/admin/roles")
+		.antMatchers("/api/admin/login/**")
 		.permitAll()
 		.antMatchers("/api/admin/**")
 		.hasRole("ADMIN")

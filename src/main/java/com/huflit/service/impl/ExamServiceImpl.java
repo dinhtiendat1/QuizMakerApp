@@ -1,6 +1,9 @@
 package com.huflit.service.impl;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +34,7 @@ public class ExamServiceImpl implements ExamService {
 		List<ExamDto> dtos = new ArrayList<ExamDto>();
 		
 		for (Exam entity : examRepository.findAll()) {
-			ExamDto dto = new ExamDto(entity.getId(), entity.getTitle(), entity.getTime(), entity.getCategoryId(), entity.getLastUpdate());
+			ExamDto dto = new ExamDto(entity.getId(), entity.getTitle(), entity.getTime(), entity.getCategoryId(), entity.getLastUpdate(), entity.getCreateDate());
 			dtos.add(dto);
 		}
 		
@@ -42,15 +45,18 @@ public class ExamServiceImpl implements ExamService {
 	public ExamDto findById(int id) {
 		Exam entity = examRepository.getById(id);
 		
-		return new ExamDto(entity.getId(), entity.getTitle(), entity.getTime(), entity.getCategoryId(), entity.getLastUpdate());
+		return new ExamDto(entity.getId(), entity.getTitle(), entity.getTime(), entity.getCategoryId(), entity.getLastUpdate(), entity.getCreateDate());
 	}
 
 	@Override
 	public void add(ExamDto dto) {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		int userId = ((UserDetailsDto) principal).getId();
-
-		Exam entity = new Exam(dto.getTitle(), dto.getTime(), dto.getCategoryId(), dto.getLastUpdate());
+		Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyy");
+		String strDate = formatter.format(date);
+		System.out.println(strDate);
+		Exam entity = new Exam(dto.getTitle(), dto.getTime(), dto.getCategoryId(), strDate, strDate);
 		
 		int examId = examRepository.saveAndFlush(entity).getId();
 		UserExamPK userExamPK = new UserExamPK(userId, examId, 0);
@@ -60,7 +66,7 @@ public class ExamServiceImpl implements ExamService {
 
 	@Override
 	public void edit(ExamDto dto) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub     
 		
 	}
 

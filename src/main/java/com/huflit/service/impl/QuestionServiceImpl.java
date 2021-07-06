@@ -31,7 +31,7 @@ public class QuestionServiceImpl implements QuestionService{
 	
 	@Override
 	public void add(QuestionPackageDto pkgDto) {
-		Question entity = new Question(pkgDto.getContent(), pkgDto.getExamId(), pkgDto.getQuestionTypeId());
+		Question entity = new Question(pkgDto.getContent(), pkgDto.getQuestionTypeId());
 		int number = questionRepository.saveAndFlush(entity).getId();
 		
 		for(AnswerDto aliasDto : pkgDto.getAnswers()) {
@@ -46,7 +46,7 @@ public class QuestionServiceImpl implements QuestionService{
 		List<QuestionDto> dtos = new ArrayList<QuestionDto>();
 		
 		for(Question entity : questionRepository.findAll()) {
-			QuestionDto dto = new QuestionDto(entity.getId(), entity.getContent(), entity.getExamId(), entity.getQuestionTypeId());
+			QuestionDto dto = new QuestionDto(entity.getId(), entity.getContent(), entity.getQuestionTypeId());
 			dtos.add(dto);
 		}
 		return dtos;
@@ -57,19 +57,19 @@ public class QuestionServiceImpl implements QuestionService{
 		
 		Question entity = questionRepository.getById(id);
 			
-		return new QuestionDto(entity.getId(), entity.getContent(), entity.getExamId(), entity.getQuestionTypeId());
+		return new QuestionDto(entity.getId(), entity.getContent(), entity.getQuestionTypeId());
 	}
 	
 	
 	@Override
 	public void add(QuestionDto dto) {
-		Question entity = new Question(dto.getContent(), dto.getExamId(), dto.getQuestionTypeId());
+		Question entity = new Question(dto.getContent(), dto.getQuestionTypeId());
 		questionRepository.save(entity);
 	}
 
 	@Override
 	public void edit(QuestionDto dto) {
-		Question entity = new Question(dto.getId(), dto.getContent(), dto.getExamId(), dto.getQuestionTypeId());
+		Question entity = new Question(dto.getId(), dto.getContent(), dto.getQuestionTypeId());
 		questionRepository.save(entity);
 	}
 
@@ -87,7 +87,7 @@ public class QuestionServiceImpl implements QuestionService{
 			QuestionPackageDto pkgDto = new QuestionPackageDto();
 			pkgDto.setId(entity.getId());
 			pkgDto.setContent(entity.getContent());
-			pkgDto.setExamId(entity.getExamId());
+//			pkgDto.setExamId(entity.getExamId());
 			pkgDto.setQuestionTypeId(entity.getQuestionTypeId());
 			
 			List<AnswerDto> dtos = new ArrayList<AnswerDto>();
@@ -111,7 +111,7 @@ public class QuestionServiceImpl implements QuestionService{
 			QuestionPackageDto pkgDto = new QuestionPackageDto();
 			pkgDto.setId(entity.getId());
 			pkgDto.setContent(entity.getContent());
-			pkgDto.setExamId(entity.getExamId());
+//			pkgDto.setExamId(entity.getExamId());
 			pkgDto.setQuestionTypeId(entity.getQuestionTypeId());
 			
 			List<AnswerDto> dtos = new ArrayList<AnswerDto>();

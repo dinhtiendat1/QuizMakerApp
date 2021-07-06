@@ -34,35 +34,35 @@ public class Question {
 	@Column(name = "content", length = 255)
 	private String content;
 	
-	@Column(name = "exam_id")
-	private int examId;
+//	@Column(name = "exam_id")
+//	private int examId;
 	
 	@Column(name = "question_type_id")
 	private int questionTypeId;
 	
-	@ManyToOne
-	@JoinColumn(name = "exam_id", insertable = false, updatable = false)
-	private Exam exam;
+//	@ManyToOne
+//	@JoinColumn(name = "exam_id", insertable = false, updatable = false)
+//	private Exam exam;
 	
 	@ManyToOne
 	@JoinColumn(name = "question_type_id", insertable = false, updatable = false)
 	private QuestionType questionType;
 	
 	@OneToMany(mappedBy = "question", fetch = FetchType.LAZY)
-	private List<Answer> answers;
+	private List<ExamQuestion> examQuestions;
 
-	public Question(String content, int examId, int questionTypeId) {
+	public Question(String content, int questionTypeId) {
 		super();
 		this.content = content;
-		this.examId = examId;
+//		this.examId = examId;
 		this.questionTypeId = questionTypeId;
 	}
 
-	public Question(int id, String content, int examId, int questionTypeId) {
+	public Question(int id, String content, int questionTypeId) {
 		super();
 		this.id = id;
 		this.content = content;
-		this.examId = examId;
+//		this.examId = examId;
 		this.questionTypeId = questionTypeId;
 	}
 	
