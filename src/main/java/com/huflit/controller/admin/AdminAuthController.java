@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.huflit.dto.LoginDto;
+import com.huflit.dto.LoginRtnDto;
 import com.huflit.dto.RegisterDto;
 import com.huflit.dto.RoleDto;
 import com.huflit.dto.UserDto;
+import com.huflit.dto.UserPackageDto;
 import com.huflit.service.AuthService;
 import com.huflit.service.RoleService;
 import com.huflit.service.UserService;
@@ -36,7 +38,10 @@ public class AdminAuthController {
 	public Object post(@RequestBody LoginDto loginDto) {
 		try {
 			String token = authService.login(loginDto);
-			return new ResponseEntity<Object>(token, HttpStatus.OK);
+			UserPackageDto user = userService.findByEmail(loginDto.getEmail());
+			
+			LoginRtnDto rtnDto = new LoginRtnDto(token, user);
+			return new ResponseEntity<Object>(rtnDto, HttpStatus.OK);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

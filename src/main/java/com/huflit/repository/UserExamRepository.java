@@ -8,4 +8,5 @@ import com.huflit.entity.UserExam;
 @Repository
 public interface UserExamRepository extends JpaRepository<UserExam, Integer> {
 
+	
 }

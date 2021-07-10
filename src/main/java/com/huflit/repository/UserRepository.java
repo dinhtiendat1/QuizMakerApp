@@ -10,6 +10,9 @@ import com.huflit.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-	@Query("SELECT u FROM User u WHERE u.email = :email")
+//	@Query("SELECT u FROM User u WHERE u.email = :email")
 	public User findByEmail(@Param("email") String email);
+	
+	int countByEmail(String email);
+	
 }

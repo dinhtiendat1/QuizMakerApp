@@ -32,10 +32,10 @@ public class UserSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.csrf().disable()
 		.antMatcher("/api/**") // link gui len phai bat dau voi /api thi moi duoc chap nhan
 		.authorizeRequests()
-		.antMatchers("/api/exams/**")
-		.hasRole("USER")
 		.antMatchers("/api/auth/**")
 		.permitAll()
+		.antMatchers("/api/exams/**")
+		.hasRole("USER")
 		.antMatchers("/api/user/profile", "/api/user/password", "/api/user/updateAvatar")
 		.authenticated()
 		;
