@@ -11,6 +11,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.huflit.dto.ExamDto;
+import com.huflit.dto.ExamPackageDto;
+import com.huflit.dto.QuestionPackageDto;
 import com.huflit.entity.Exam;
 import com.huflit.entity.UserExam;
 import com.huflit.entity.UserExamPK;
@@ -62,6 +64,24 @@ public class ExamServiceImpl implements ExamService {
 		UserExamPK userExamPK = new UserExamPK(userId, examId, 0);
 		UserExam userExam = new UserExam(userExamPK, 0);
 		userExamRepository.save(userExam);
+	}
+	
+	@Override
+	public void add(ExamPackageDto dto) {
+//		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//		int userId = ((UserDetailsDto) principal).getId();
+//		Date date = new Date();
+//		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyy");
+//		String strDate = formatter.format(date);
+//		System.out.println(strDate);
+//		Exam entity = new Exam(dto.getTitle(), dto.getTime(), dto.getCategory().getId(), strDate, strDate);
+//		
+//		int examId = examRepository.saveAndFlush(entity).getId();
+//		UserExamPK userExamPK = new UserExamPK(userId, examId, 0);
+//		UserExam userExam = new UserExam(userExamPK, 0);
+//		userExamRepository.save(userExam);
+//		
+//		for(QuestionPackageDto)
 	}
 
 	@Override

@@ -23,7 +23,19 @@ public class CategoryServiceImpl implements CategoryService{
 
 	@Override
 	public List<CategoryDto> findAll() {
-		List<Category> entities = categoryRepository.findAll();
+		List<Category> entities = categoryRepository.findByStatusTrue();
+		List<CategoryDto> dtos = new ArrayList<CategoryDto>();
+
+		for (Category entity : entities) {
+			dtos.add(new CategoryDto(entity.getId(), entity.getName(), entity.getIcon()));
+		}
+
+		return dtos;
+	}
+	
+	@Override
+	public List<CategoryDto> findAllStatusFalse() {
+		List<Category> entities = categoryRepository.findByStatusFalse();
 		List<CategoryDto> dtos = new ArrayList<CategoryDto>();
 
 		for (Category entity : entities) {
@@ -36,6 +48,13 @@ public class CategoryServiceImpl implements CategoryService{
 	@Override
 	public CategoryDto findById(int id) {
 		Category entity = categoryRepository.getById(id);
+		return new CategoryDto(entity.getId(), entity.getName(), entity.getIcon());
+	}
+	
+	@Override
+	public CategoryDto findByIdAndStatusTrue(int id) {
+		Category entity = categoryRepository.findByIdAndStatusTrue(id);
+//		if(entity)
 		return new CategoryDto(entity.getId(), entity.getName(), entity.getIcon());
 	}
 
@@ -54,7 +73,13 @@ public class CategoryServiceImpl implements CategoryService{
 
 	@Override
 	public void add(CategoryDto dto) {
-		Category entity = new Category(dto.getName(), dto.getIcon());
+		Category entity = new Category(dto.getName(), dto.getIcon(), true);
+		categoryRepository.save(entity);
+	}
+	
+	@Override
+	public void addByUser(CategoryDto dto) {
+		Category entity = new Category(dto.getName(), dto.getIcon(), false);
 		categoryRepository.save(entity);
 	}
 

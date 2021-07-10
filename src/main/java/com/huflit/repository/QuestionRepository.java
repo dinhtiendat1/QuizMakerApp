@@ -24,4 +24,6 @@ public interface QuestionRepository extends JpaRepository<Question, Integer>{
 			+ "INNER JOIN QuestionType qt ON q.questionTypeId = qt.id "
 			+ "WHERE qt.id = :questionTypeId ")
 	List<Question> findByQuestionTypeId(@Param("questionTypeId") Integer questionTypeId);
+	
+	List<Question> findByStatusTrue();
 }

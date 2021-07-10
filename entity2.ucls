@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="false" 
+  realizations="false" associations="false" dependencies="false" nesting-relationships="false" router="FAN">  
+  <class id="1" language="java" name="com.huflit.entity.UserExamPK" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/UserExamPK.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="333" width="173" x="32" y="183"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.huflit.entity.Question" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/Question.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="603" width="384" x="245" y="183"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.huflit.entity.User" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="729" width="448" x="669" y="183"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.huflit.entity.ExamQuestionPK" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/ExamQuestionPK.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="150" x="1157" y="183"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.huflit.entity.QuestionTypeExam" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/QuestionTypeExam.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="333" width="343" x="1347" y="183"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.huflit.entity.Exam" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/Exam.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1415" y="890"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.huflit.entity.Category" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/Category.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="679" y="1496"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.huflit.entity.Role" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/Role.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1263" y="1458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.huflit.entity.UserExam" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/UserExam.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="667" y="1107"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.huflit.entity.Answer" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/Answer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="955" y="1138"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.huflit.entity.QuestionType" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/QuestionType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="289" y="1159"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.huflit.entity.ExamQuestion" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/ExamQuestion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="949" y="1519"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.huflit.entity.QuestionTypeExamPK" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/QuestionTypeExamPK.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="131" y="712"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="false" multiplicity="false"/>
+</class-diagram>

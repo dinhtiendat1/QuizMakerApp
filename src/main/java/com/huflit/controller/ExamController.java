@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.huflit.dto.ExamDto;
+import com.huflit.dto.ExamPackageDto;
 import com.huflit.dto.QuestionDto;
 import com.huflit.dto.QuestionPackageDto;
 import com.huflit.dto.RoleDto;
@@ -44,6 +45,17 @@ public class ExamController {
 	public Object post(@RequestBody ExamDto body) {
 		try {
 			examService.add(body);
+			return new ResponseEntity<Object>(HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+	}
+	
+	@PostMapping("/package")
+	public Object postPkg(@RequestBody ExamPackageDto body) {
+		try {
+//			examService.add(body);
 			return new ResponseEntity<Object>(HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -37,6 +37,9 @@ public class QuestionType {
 	@Column(name = "icon", length = 255)
 	private String icon;
 	
+	@Column(name = "status")
+	private Boolean status;
+	
 	@Column(name = "category_id")
 	private int categoryId;
 	

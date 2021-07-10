@@ -31,7 +31,7 @@ public class QuestionServiceImpl implements QuestionService{
 	
 	@Override
 	public void add(QuestionPackageDto pkgDto) {
-		Question entity = new Question(pkgDto.getContent(), pkgDto.getQuestionTypeId());
+		Question entity = new Question(pkgDto.getContent(), pkgDto.getQuestionTypeId(), false);
 		int number = questionRepository.saveAndFlush(entity).getId();
 		
 		for(AnswerDto aliasDto : pkgDto.getAnswers()) {
@@ -45,7 +45,7 @@ public class QuestionServiceImpl implements QuestionService{
 		
 		List<QuestionDto> dtos = new ArrayList<QuestionDto>();
 		
-		for(Question entity : questionRepository.findAll()) {
+		for(Question entity : questionRepository.findByStatusTrue()) {
 			QuestionDto dto = new QuestionDto(entity.getId(), entity.getContent(), entity.getQuestionTypeId());
 			dtos.add(dto);
 		}

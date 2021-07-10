@@ -51,6 +51,17 @@ public class QuestionController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
+	@PostMapping("/package")
+	public Object post(@RequestBody QuestionPackageDto body) {
+		try {
+			questionService.add(body);
+			return new ResponseEntity<Object>(HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+	}
+	
 	@GetMapping("/{id}")
 	public Object get(@PathVariable("id") int id) {
 		try {

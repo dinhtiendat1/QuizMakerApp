@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.huflit.entity.UserExamPK" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/UserExamPK.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1383" y="830"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.huflit.entity.Question" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/Question.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1768" y="2095"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.huflit.entity.User" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="590" y="980"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.huflit.entity.ExamQuestionPK" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/ExamQuestionPK.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="888" y="1895"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.huflit.entity.QuestionTypeExam" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/QuestionTypeExam.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="386" y="1682"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.huflit.entity.Exam" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/Exam.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1193" y="1370"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.huflit.entity.Category" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/Category.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2112" y="1205"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.huflit.entity.Role" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/Role.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="228" y="802"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.huflit.entity.UserExam" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/UserExam.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1099" y="807"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.huflit.entity.Answer" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/Answer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1760" y="1553"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.huflit.entity.QuestionType" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/QuestionType.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="553" y="2340"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.huflit.entity.ExamQuestion" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/ExamQuestion.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1130" y="1873"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.huflit.entity.QuestionTypeExamPK" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/entity/QuestionTypeExamPK.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="225" y="2059"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="14">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="15" name="user"/>      
+      <multiplicity id="16" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="17">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="18" name="questionTypeExams"/>      
+      <multiplicity id="19" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="20">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="21" name="exam"/>      
+      <multiplicity id="22" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="23">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="24" name="id"/>      
+      <multiplicity id="25" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="26">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="27" name="questions"/>      
+      <multiplicity id="28" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="29">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="30" name="questions"/>      
+      <multiplicity id="31" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="32">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="33" name="user"/>      
+      <multiplicity id="34" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="35">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="36" name="questionTypeExams"/>      
+      <multiplicity id="37" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="38">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="39" name="category"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="41">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="42" name="role"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="44">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="45" name="userExams"/>      
+      <multiplicity id="46" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="48" name="id"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="51" name="exam"/>      
+      <multiplicity id="52" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="53">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="54" name="users"/>      
+      <multiplicity id="55" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="56">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="57" name="question"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="59">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="60" name="userExams"/>      
+      <multiplicity id="61" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="62">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="63" name="examQuestions"/>      
+      <multiplicity id="64" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="65">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="66" name="id"/>      
+      <multiplicity id="67" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="68">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="69" name="examQuestions"/>      
+      <multiplicity id="70" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="71">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="72" name="question"/>      
+      <multiplicity id="73" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="74">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="75" name="exam"/>      
+      <multiplicity id="76" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="77">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="78" name="questionType"/>      
+      <multiplicity id="79" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="80">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="81" name="questionType"/>      
+      <multiplicity id="82" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="83">    
+    <bendpoint x="2176" y="2550"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="84" name="category"/>      
+      <multiplicity id="85" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

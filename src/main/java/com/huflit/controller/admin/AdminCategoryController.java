@@ -38,6 +38,17 @@ public class AdminCategoryController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
+	@GetMapping("/false")
+	public Object getAllStatusFalse() {
+		try {
+			List<CategoryDto> dtos = categoryService.findAllStatusFalse();
+			return new ResponseEntity<Object>(dtos, HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+	}
+	
 	// lưu category mới 
 	@PostMapping("")
 	public Object post(@RequestBody CategoryDto body) {

@@ -51,21 +51,25 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void add(RegisterDto dto) {
+	public void add(RegisterDto dto) throws Exception {
+		if(dto.getEmail() == "" || dto.getEmail() == null || dto.getPassword() == "" || dto.getPassword() == null || dto.getFullname() == "" || dto.getFullname() == null) {
+			throw new Exception();
+		}
 		if(userRepository.findByEmail(dto.getEmail()) == null) {
 			String hashed = BCrypt.hashpw(dto.getPassword(), BCrypt.gensalt());
-			User entity = new User(dto.getEmail(), dto.getFullname(), hashed, "default avatar", dto.getPhone(), 3);
+			User entity = new User(dto.getEmail(), dto.getFullname(), hashed, "defaultavatar", dto.getPhone(), 3);
 			
 			userRepository.save(entity);
+		} else {
+			throw new Exception();
 		}
-		
 	}
 	
 	@Override
 	public void addAdmin(RegisterDto dto) {
 		if(userRepository.findByEmail(dto.getEmail()) == null) {
 			String hashed = BCrypt.hashpw(dto.getPassword(), BCrypt.gensalt());
-			User entity = new User(dto.getEmail(), dto.getFullname(), hashed, "default avatar", dto.getPhone(), 1);
+			User entity = new User(dto.getEmail(), dto.getFullname(), hashed, "defaultavatar", dto.getPhone(), 1);
 			
 			userRepository.save(entity);
 		}

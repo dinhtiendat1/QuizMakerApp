@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.huflit.config.AdminSecurityConfig" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/config/AdminSecurityConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="257" x="76" y="83"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.huflit.config.ModSecurityConfig" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/config/ModSecurityConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="475" y="165"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.huflit.config.SwaggerConfig" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/config/SwaggerConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="930" y="138"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.huflit.config.UserSecurityConfig" project="QuizMaker2" 
+    file="/QuizMaker2/src/main/java/com/huflit/config/UserSecurityConfig.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="741" y="166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

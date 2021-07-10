@@ -13,7 +13,7 @@ public interface UserService {
 
 	void update(int id, UserDto dto);
 
-	void add(RegisterDto dto);
+	void add(RegisterDto dto) throws Exception;
 	
 	void addAdmin(RegisterDto dto);
 

@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.sun.istack.NotNull;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,12 +33,15 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
+	@NotNull
 	@Column(name = "email", length = 255)
 	private String email;
 	
+	@NotNull
 	@Column(name = "fullname", length = 100)
 	private String fullname;
 	
+	@NotNull
 	@Column(name = "password", length = 100)
 	private String password;
 	
@@ -58,6 +63,9 @@ public class User {
 	
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 	private List<UserExam> userExams;
+	
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+	private List<Question> questions;
 
 	public User(String email, String fullname, String password, String avatar, String phone, String address,
 			int roleId) {

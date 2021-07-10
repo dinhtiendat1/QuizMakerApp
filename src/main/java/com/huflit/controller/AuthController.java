@@ -39,7 +39,7 @@ public class AuthController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
-	@PostMapping("resgiter")
+	@PostMapping("register")
 	public Object post(@RequestBody RegisterDto dto) {
 		try {
 			userService.add(dto);

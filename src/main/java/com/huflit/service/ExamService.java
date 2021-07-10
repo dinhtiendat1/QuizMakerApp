@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.huflit.dto.ExamDto;
+import com.huflit.dto.ExamPackageDto;
 
 @Service
 public interface ExamService {
@@ -14,6 +15,8 @@ public interface ExamService {
 	ExamDto findById(int id);
 	
 	void add(ExamDto dto);
+	
+	void add(ExamPackageDto dto);
 	
 	void edit(ExamDto dto);
 	

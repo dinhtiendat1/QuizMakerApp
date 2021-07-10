@@ -30,11 +30,15 @@ public class Category {
 	
 	@Column(name = "icon", length = 255)
 	private String icon;
+	
+	@Column(name = "status")
+	private Boolean status;
 
-	public Category(String name, String icon) {
+	public Category(String name, String icon, boolean status) {
 		super();
 		this.name = name;
 		this.icon = icon;
+		this.status = status;
 	}
 	
 	
