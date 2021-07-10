@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 		List<UserDto> dtos = new ArrayList<UserDto>();
 		
 		for (User entity : userRepository.findAll()) {
-			UserDto dto = new UserDto(entity.getId(), entity.getEmail(),  entity.getFullname(), entity.getPassword(), entity.getAvatar(), entity.getPhone(), entity.getAddress(),  entity.getId());
+			UserDto dto = new UserDto(entity.getId(), entity.getEmail(),  entity.getFullname(), entity.getPassword(), entity.getAvatar(), entity.getPhone(), entity.getAddress(),  entity.getRoleId());
 			dtos.add(dto);
 		}
 		
@@ -52,13 +52,17 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void add(RegisterDto dto) throws Exception {
-		if(dto.getEmail() == "" || dto.getEmail() == null || dto.getPassword() == "" || dto.getPassword() == null || dto.getFullname() == "" || dto.getFullname() == null) {
-			throw new Exception();
-		}
+//		if(dto.getEmail() == "" || dto.getEmail() == null || dto.getPassword() == "" || dto.getPassword() == null || dto.getFullname() == "" || dto.getFullname() == null) {
+//			throw new Exception();
+//		}
 		if(userRepository.findByEmail(dto.getEmail()) == null) {
 			String hashed = BCrypt.hashpw(dto.getPassword(), BCrypt.gensalt());
 			User entity = new User(dto.getEmail(), dto.getFullname(), hashed, "defaultavatar", dto.getPhone(), 3);
-			
+			System.out.println("service //------------");
+			System.out.println(entity.getRoleId());
+			System.out.println(entity.getId());
+			System.out.println(entity.getEmail());
+			System.out.println("end service //--------");
 			userRepository.save(entity);
 		} else {
 			throw new Exception();
