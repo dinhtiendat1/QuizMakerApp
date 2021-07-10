@@ -34,6 +34,8 @@ public class UserSecurityConfig extends WebSecurityConfigurerAdapter {
 		.authorizeRequests()
 		.antMatchers("/api/exams/**")
 		.hasRole("USER")
+		.antMatchers("/api/auth/**")
+		.permitAll()
 		.antMatchers("/api/user/profile", "/api/user/password", "/api/user/updateAvatar")
 		.authenticated()
 		;
