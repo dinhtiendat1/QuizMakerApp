@@ -3,6 +3,8 @@ package com.huflit.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,7 @@ import com.huflit.service.UserService;
 
 @Service
 @Scope("prototype")
+@Transactional(rollbackOn = Exception.class)
 public class UserServiceImpl implements UserService {
 
 	private UserRepository userRepository;

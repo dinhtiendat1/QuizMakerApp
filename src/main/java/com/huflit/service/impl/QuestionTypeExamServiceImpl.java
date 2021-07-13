@@ -2,6 +2,8 @@ package com.huflit.service.impl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,7 @@ import com.huflit.service.QuestionTypeService;
 
 @Service
 @Scope("prototype")
+@Transactional(rollbackOn = Exception.class)
 public class QuestionTypeExamServiceImpl implements QuestionTypeService{
 
 	@Override

@@ -70,7 +70,7 @@ public class AuthController {
 	}
 	
 	@GetMapping("/{email}")
-	public Object post(@PathVariable("email") String email) {
+	public Object get(@PathVariable("email") String email) {
 		try {
 			System.out.println(email);
 			int number = userService.countByEmail(email);

@@ -59,6 +59,9 @@ public class Exam {
 	
 	@OneToMany(mappedBy = "exam", fetch = FetchType.LAZY)
 	private List<QuestionTypeExam> questionTypeExams;
+	
+	@OneToMany(mappedBy = "exam", fetch = FetchType.LAZY)
+	private List<GroupExam> groupExams;
 
 	public Exam(int id, String title, int time, int categoryId, String lastUpdate) {
 		super();

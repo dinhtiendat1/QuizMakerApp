@@ -2,6 +2,8 @@ package com.huflit.service.impl;
 
 import java.util.Date;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,6 +19,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 @Service
 @Scope("prototype")
+@Transactional(rollbackOn = Exception.class)
 public class AuthServiceImpl implements AuthService {
 
 	@Autowired

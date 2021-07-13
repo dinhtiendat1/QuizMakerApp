@@ -67,6 +67,12 @@ public class User {
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 	private List<Question> questions;
 
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+	private List<UserGroup> userGroups;
+	
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+	private List<Group> groups;
+	
 	public User(String email, String fullname, String password, String avatar, String phone, String address,
 			int roleId) {
 		super();

@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +25,8 @@ import com.huflit.service.ExamService;
 import com.huflit.dto.UserDetailsDto;
 
 @Service
+@Scope("prototype")
+@Transactional(rollbackOn = Exception.class)
 public class ExamServiceImpl implements ExamService {
 
 	@Autowired

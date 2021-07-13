@@ -3,6 +3,8 @@ package com.huflit.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
@@ -14,7 +16,7 @@ import com.huflit.service.AnswerService;
 
 @Service
 @Scope("prototype")
-
+@Transactional(rollbackOn = Exception.class)
 public class AnswerServiceImpl implements AnswerService{
 
 	@Autowired
