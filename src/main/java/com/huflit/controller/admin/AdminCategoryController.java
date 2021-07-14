@@ -95,4 +95,15 @@ public class AdminCategoryController {
 		}
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
+	
+	@PutMapping("/approve/{id}")
+	public Object put(@PathVariable("id") int id) {
+		try {
+			categoryService.approve(id);
+			return new ResponseEntity<Object>(HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+	}
 }

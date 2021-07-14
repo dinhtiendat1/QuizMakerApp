@@ -26,5 +26,4 @@ public class QuestionTypeDto {
 		this.categoryId = categoryId;
 	}
 	
-	
 }

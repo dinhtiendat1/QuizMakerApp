@@ -102,6 +102,8 @@ public class GroupServiceImpl implements GroupService {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		int userId = ((UserDetailsDto) principal).getId();
 		
+		System.out.println(userId);
+		
 		for(Group entity : groupRepository.findAllOfMyGroup(userId)) {
 			UserDto userDto  = new UserDto(entity.getUser().getId(), entity.getUser().getEmail(), entity.getUser().getFullname(), entity.getUser().getPassword(), entity.getUser().getAvatar(), entity.getUser().getPhone(), entity.getUser().getAddress(), entity.getUser().getRoleId());
 			GroupDto dto = new GroupDto(entity.getId(), entity.getName(), entity.getDescription(), entity.getGroupCode(), userDto);

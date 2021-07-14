@@ -90,4 +90,12 @@ public class CategoryServiceImpl implements CategoryService{
 	public void delete(int id) {
 		categoryRepository.deleteById(id);
 	}
+
+	@Override
+	public void approve(int id) {
+		Category entity = categoryRepository.getById(id);
+		entity.setStatus(true);
+		categoryRepository.save(entity);
+		
+	}
 }

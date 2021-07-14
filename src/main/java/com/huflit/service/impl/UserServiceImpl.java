@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.huflit.dto.EditPasswordDto;
 import com.huflit.dto.RegisterDto;
+import com.huflit.dto.UpdateUserDto;
 import com.huflit.dto.UserDto;
 import com.huflit.dto.UserPackageDto;
 import com.huflit.entity.User;
@@ -58,9 +59,15 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void update(int id, UserDto dto) {
-		// TODO Auto-generated method stub
+	public void update(UpdateUserDto dto) {
+		User entity = userRepository.getById(dto.getId());
 		
+		entity.setAddress(dto.getAddress());
+		entity.setAvatar(dto.getAddress());
+		entity.setFullname(dto.getFullname());
+		entity.setPhone(dto.getPhone());
+		
+		userRepository.save(entity);
 	}
 
 	@Override

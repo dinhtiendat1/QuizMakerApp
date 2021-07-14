@@ -60,6 +60,14 @@ public class QuestionType {
 		this.categoryId = categoryId;
 	}
 	
+	public QuestionType(String name, String icon, int categoryId, boolean status) {
+		super();
+		this.name = name;
+		this.icon = icon;
+		this.categoryId = categoryId;
+		this.status = status;
+	}
+	
 	public QuestionType(int id, String name, String icon, int categoryId) {
 		super();
 		this.name = name;

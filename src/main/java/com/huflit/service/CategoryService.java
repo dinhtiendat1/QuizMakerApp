@@ -21,4 +21,6 @@ public interface CategoryService {
 	void addByUser(CategoryDto dto);
 
 	void delete(int id);
+	
+	void approve(int id);
 }

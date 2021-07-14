@@ -8,33 +8,35 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.huflit.dto.QuestionTypeDto;
+import com.huflit.dto.QuestionTypeExamDto;
+import com.huflit.service.QuestionTypeExamService;
 import com.huflit.service.QuestionTypeService;
 
 @Service
 @Scope("prototype")
 @Transactional(rollbackOn = Exception.class)
-public class QuestionTypeExamServiceImpl implements QuestionTypeService{
+public class QuestionTypeExamServiceImpl implements QuestionTypeExamService{
 
 	@Override
-	public List<QuestionTypeDto> findAll() {
+	public List<QuestionTypeExamDto> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public QuestionTypeDto findById(int id) {
+	public QuestionTypeExamDto findById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public void update(QuestionTypeDto dto) {
+	public void add(QuestionTypeExamDto dto) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void add(QuestionTypeDto dto) {
+	public void edit(QuestionTypeExamDto dto) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -44,5 +46,7 @@ public class QuestionTypeExamServiceImpl implements QuestionTypeService{
 		// TODO Auto-generated method stub
 		
 	}
+
+
 
 }

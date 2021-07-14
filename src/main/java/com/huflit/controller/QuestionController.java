@@ -73,8 +73,8 @@ public class QuestionController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
-	@PutMapping("/{id}")
-	public Object put(@PathVariable("id") int id, @RequestBody QuestionDto dto) {
+	@PutMapping("")
+	public Object put(@RequestBody QuestionDto dto) {
 		try {
 			questionService.edit(dto);
 			return new ResponseEntity<Object>(HttpStatus.OK);

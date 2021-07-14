@@ -37,7 +37,7 @@ public class GroupController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
-	@GetMapping("/{name}")
+	@GetMapping("/name/{name}")
 	public Object findByName(@PathVariable("name") String name) {
 		try {
 			List<GroupDto> dtos = groupService.findByName(name);
@@ -48,7 +48,7 @@ public class GroupController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/id/{id}")
 	public Object get(@PathVariable("id") int id) {
 		try {
 			GroupDto dto = groupService.findById(id);
@@ -62,7 +62,7 @@ public class GroupController {
 	@GetMapping("/myGroup")
 	public Object getAllOfMyGroup() {
 		try {
-			List<GroupDto> dtos = groupService.findAll();
+			List<GroupDto> dtos = groupService.findAllOfMyGroup();
 			return new ResponseEntity<Object>(dtos, HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -107,7 +107,7 @@ public class GroupController {
 		return new ResponseEntity<Object>(message ,HttpStatus.BAD_REQUEST);
 	}
 	
-	@PutMapping("/join/{groupId}")
+	@PostMapping("/join/{groupId}")
 	public Object join(@PathVariable("groupId") int id) {
 		String message;
 		try {
@@ -120,7 +120,7 @@ public class GroupController {
 		return new ResponseEntity<Object>(message ,HttpStatus.BAD_REQUEST);
 	}
 	
-	@PutMapping("/leave/{groupId}")
+	@DeleteMapping("/leave/{groupId}")
 	public Object leave(@PathVariable("groupId") int id) {
 		String message;
 		try {

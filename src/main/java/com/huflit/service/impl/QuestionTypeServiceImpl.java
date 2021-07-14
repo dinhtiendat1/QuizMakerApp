@@ -26,7 +26,7 @@ public class QuestionTypeServiceImpl implements QuestionTypeService {
 	public List<QuestionTypeDto> findAll() {
 		List<QuestionTypeDto> dtos = new ArrayList<QuestionTypeDto>();
 		
-		for (QuestionType entity : questionTypeRepository.findAll()) {
+		for (QuestionType entity : questionTypeRepository.findByStatusTrue()) {
 			
 			dtos.add(new QuestionTypeDto(entity.getId(), entity.getName(), entity.getIcon(), entity.getCategoryId()));
 		}
@@ -57,7 +57,7 @@ public class QuestionTypeServiceImpl implements QuestionTypeService {
 	@Override
 	public void add(QuestionTypeDto dto) {
 
-		QuestionType entity = new QuestionType(dto.getName(), dto.getIcon(), dto.getCategoryId());
+		QuestionType entity = new QuestionType(dto.getName(), dto.getIcon(), dto.getCategoryId(), true);
 		
 		questionTypeRepository.save(entity);
 		
@@ -67,6 +67,44 @@ public class QuestionTypeServiceImpl implements QuestionTypeService {
 	public void delete(int id) {
 
 		questionTypeRepository.deleteById(id);
+		
+	}
+
+	@Override
+	public List<QuestionTypeDto> findAllStatusFalse() {
+		List<QuestionTypeDto> dtos = new ArrayList<QuestionTypeDto>();
+		
+		for (QuestionType entity : questionTypeRepository.findByStatusFalse()) {
+			
+			dtos.add(new QuestionTypeDto(entity.getId(), entity.getName(), entity.getIcon(), entity.getCategoryId()));
+		}
+		
+		return dtos;
+	}
+
+	@Override
+	public QuestionTypeDto findByIdAndStatusTrue(int id) throws Exception {
+		QuestionType entity = questionTypeRepository.findByIdAndStatusTrue(id);
+		
+		return new QuestionTypeDto(entity.getId(), entity.getName(), entity.getIcon(), entity.getCategoryId());
+	}
+
+	@Override
+	public void addByUser(QuestionTypeDto dto) {
+
+		QuestionType entity = new QuestionType(dto.getName(), dto.getIcon(), dto.getCategoryId(), false);
+		
+		questionTypeRepository.save(entity);
+		
+	}
+
+	@Override
+	public void approve(int id) {
+		QuestionType entity = questionTypeRepository.getById(id);
+		
+		entity.setStatus(true);
+		
+		questionTypeRepository.save(entity);
 		
 	}
 

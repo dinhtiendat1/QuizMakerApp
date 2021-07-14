@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.huflit.dto.EditPasswordDto;
 import com.huflit.dto.RegisterDto;
+import com.huflit.dto.UpdateUserDto;
 import com.huflit.dto.UserDto;
 import com.huflit.dto.UserPackageDto;
 
@@ -15,7 +16,7 @@ public interface UserService {
 	
 	UserPackageDto findByEmail(String email);
 
-	void update(int id, UserDto dto);
+	void update(UpdateUserDto dto);
 
 	void add(RegisterDto dto) throws Exception;
 	
