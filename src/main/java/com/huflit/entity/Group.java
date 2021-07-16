@@ -51,6 +51,9 @@ public class Group {
 	@OneToMany(mappedBy = "group", fetch = FetchType.LAZY)
 	private List<GroupExam> groupExams;
 	
+	@OneToMany(mappedBy = "group", fetch = FetchType.LAZY)
+	private List<GroupMessage> groupMessages;
+	
 	@ManyToOne
 	@JsonBackReference
 	@JoinColumn(name = "owner_id", insertable = false, updatable = false)

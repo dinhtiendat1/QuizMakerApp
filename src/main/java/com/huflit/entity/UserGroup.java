@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,10 +31,12 @@ public class UserGroup implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id", insertable = false, updatable = false)
+//	@JsonBackReference
 	private User user;
 	
 	@ManyToOne
 	@JoinColumn(name = "group_id", insertable = false, updatable = false)
+//	@JsonBackReference`
 	private Group group;
 
 	public UserGroup(UserGroupPK id) {
