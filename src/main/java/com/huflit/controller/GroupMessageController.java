@@ -22,7 +22,7 @@ import com.huflit.service.GroupMessageService;
 @RestController
 @Scope("prototype")
 @RequestMapping("api/groupMessages")
-@CrossOrigin
+@CrossOrigin("*")
 public class GroupMessageController {
 
 	@Autowired

@@ -19,7 +19,7 @@ import com.huflit.service.CategoryService;
 @RestController
 @Scope("prototype")
 @RequestMapping("api/categories")
-@CrossOrigin
+@CrossOrigin("*")
 public class CategoryController {
 
 	private CategoryService categoryService;

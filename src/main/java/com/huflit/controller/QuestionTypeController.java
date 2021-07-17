@@ -22,7 +22,7 @@ import com.huflit.service.QuestionTypeService;
 @RestController
 @Scope("prototype")
 @RequestMapping("api/questionTypes")
-@CrossOrigin
+@CrossOrigin("*")
 public class QuestionTypeController {
 
 	@Autowired

@@ -24,7 +24,7 @@ import com.huflit.service.QuestionService;
 @RestController
 @Scope("prototype")
 @RequestMapping("api/questions")
-@CrossOrigin
+@CrossOrigin("*")
 public class QuestionController {
 
 	@Autowired

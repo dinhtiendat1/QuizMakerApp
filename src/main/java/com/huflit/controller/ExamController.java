@@ -29,7 +29,7 @@ import com.huflit.service.QuestionTypeExamService;
 @RestController
 @Scope("prototype")
 @RequestMapping("api/exams")
-@CrossOrigin
+@CrossOrigin("*")
 public class ExamController {
 
 	@Autowired

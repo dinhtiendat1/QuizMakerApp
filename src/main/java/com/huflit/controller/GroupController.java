@@ -23,7 +23,7 @@ import com.huflit.service.GroupService;
 @RestController
 @Scope("prototype")
 @RequestMapping("api/groups")
-@CrossOrigin
+@CrossOrigin("*")
 public class GroupController {
 	
 	@Autowired
