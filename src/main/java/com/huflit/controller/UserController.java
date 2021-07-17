@@ -25,7 +25,7 @@ import com.huflit.service.UserService;
 @RestController
 @Scope("prototype")
 @RequestMapping("api/users")
-@CrossOrigin
+@CrossOrigin("*")
 public class UserController {
 
 	@Autowired
