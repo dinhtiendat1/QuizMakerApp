@@ -65,11 +65,11 @@ public class AdminAuthController {
 	@GetMapping("/createAllRoles")
 	public Object createRole() {
 		try {
-			RoleDto roleDto = new RoleDto("Admin", "ROLE_ADMIN");
+			RoleDto roleDto = new RoleDto("ROLE_ADMIN", "Admin");
 			roleService.add(roleDto);
-			roleDto = new RoleDto("Moderator", "ROLE_MOD");
+			roleDto = new RoleDto("ROLE_MOD", "Moderator");
 			roleService.add(roleDto);
-			roleDto = new RoleDto("User", "ROLE_USER");
+			roleDto = new RoleDto("ROLE_USER", "User");
 			roleService.add(roleDto);
 			return new ResponseEntity<Object>(HttpStatus.OK);
 			
