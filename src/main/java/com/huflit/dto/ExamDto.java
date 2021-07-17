@@ -17,7 +17,7 @@ public class ExamDto {
 	
 	private int time;
 	
-	private int categoryId;
+	private CategoryDto category;
 	
 	private String lastUpdate;
 	

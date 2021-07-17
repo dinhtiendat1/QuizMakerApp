@@ -69,15 +69,17 @@ public class AuthController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
-	@GetMapping("/{email}")
-	public Object get(@PathVariable("email") String email) {
+	@PostMapping("/createMockData")
+	public Object post() {
 		try {
-			System.out.println(email);
-			int number = userService.countByEmail(email);
-			return new ResponseEntity<Object>(number, HttpStatus.OK);
+			
+			userService.createMockData();
+			return new ResponseEntity<Object>(HttpStatus.CREATED);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
+	
+	
 }

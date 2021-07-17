@@ -81,6 +81,18 @@ public class ExamController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
+	@GetMapping("/group/{id}")
+	public Object getByGroupId(@PathVariable("id") int id) {
+		try {
+			List<ExamDto> dtos = examService.findByGroupId(id);
+			System.out.println(dtos);
+			return new ResponseEntity<Object>(dtos, HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+	}
+	
 	@PostMapping("/addQuestion")
 	public Object addQuestion(@RequestBody List<QuestionTypeExamDto> body) {
 		try {

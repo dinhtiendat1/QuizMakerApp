@@ -41,6 +41,9 @@ public class UserExam implements Serializable{
 	
 	@Column(name = "complete_time")
 	private int completeTime;
+	
+	@Column(name = "right_number")
+	private int rightNumber;
 
 	public UserExam(UserExamPK id, int completeTime) {
 		super();

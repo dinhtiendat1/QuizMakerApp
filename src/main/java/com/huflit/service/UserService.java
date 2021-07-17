@@ -29,4 +29,6 @@ public interface UserService {
 	void editPassword(EditPasswordDto dto);
 	
 	void updatePremium();
+	
+	void createMockData();
 }

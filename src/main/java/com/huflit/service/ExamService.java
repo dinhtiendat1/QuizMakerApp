@@ -12,6 +12,8 @@ public interface ExamService {
 
 	List<ExamDto> findAll();
 	
+	List<ExamDto> findByGroupId(int groupId);
+	
 	ExamDto findById(int id);
 	
 	void add(ExamDto dto);

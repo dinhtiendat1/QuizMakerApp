@@ -6,6 +6,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.mindrot.jbcrypt.BCrypt;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,9 @@ import com.huflit.dto.UpdateUserDto;
 import com.huflit.dto.UserDetailsDto;
 import com.huflit.dto.UserDto;
 import com.huflit.dto.UserPackageDto;
+import com.huflit.entity.Role;
 import com.huflit.entity.User;
+import com.huflit.repository.RoleRepository;
 import com.huflit.repository.UserRepository;
 import com.huflit.service.UserService;
 
@@ -31,6 +34,11 @@ public class UserServiceImpl implements UserService {
 		
 		this.userRepository = userRepository;
 	}
+	
+	@Autowired
+	private RoleRepository roleRepository;
+	
+	
 	
 	@Override
 	public List<UserDto> findAll() {
@@ -79,7 +87,7 @@ public class UserServiceImpl implements UserService {
 //		}
 		if(userRepository.findByEmail(dto.getEmail()) == null) {
 			String hashed = BCrypt.hashpw(dto.getPassword(), BCrypt.gensalt());
-			User entity = new User(dto.getEmail(), dto.getFullname(), hashed, "defaultavatar", dto.getPhone(), 3);
+			User entity = new User(dto.getEmail(), dto.getFullname(), hashed, "defaultavatar", dto.getPhone(), false, 3);
 			System.out.println("service //------------");
 			System.out.println(entity.getRoleId());
 			System.out.println(entity.getId());
@@ -95,7 +103,7 @@ public class UserServiceImpl implements UserService {
 	public void addAdmin(RegisterDto dto) {
 		if(userRepository.findByEmail(dto.getEmail()) == null) {
 			String hashed = BCrypt.hashpw(dto.getPassword(), BCrypt.gensalt());
-			User entity = new User(dto.getEmail(), dto.getFullname(), hashed, "defaultavatar", dto.getPhone(), 1);
+			User entity = new User(dto.getEmail(), dto.getFullname(), hashed, "defaultavatar", dto.getPhone(), false, 1);
 			
 			userRepository.save(entity);
 		}
@@ -134,6 +142,23 @@ public class UserServiceImpl implements UserService {
 		
 		userRepository.save(entity);
 		
+	}
+
+	@Override
+	public void createMockData() {
+		
+		Role roleEntity = null;		
+		roleEntity = new Role("ROLE_ADMIN", "Admin");
+		roleRepository.save(roleEntity);
+		roleEntity = new Role("ROLE_MOD", "Moderator");
+		roleRepository.save(roleEntity);
+		roleEntity = new Role("ROLE_USER", "User");
+		roleRepository.save(roleEntity);
+		
+		User userEntity = null;
+		for (int i = 0; i < 50; i++) {
+			userEntity = new User("ocean" + i + "@gmail.com", "Tao Manh Duc" + 1, "$2a$10$R4po7Pk0dJ1sheCgyEsUWOIeG6ivPk3eScKgJaAaRcipgkDMcohtO", "defaultavatar", "090987123", "Nguyễn Văn Quá " + i, 3);
+		}
 	}
  
 	

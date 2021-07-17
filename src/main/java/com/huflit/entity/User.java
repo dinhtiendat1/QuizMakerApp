@@ -88,10 +88,11 @@ public class User {
 		this.avatar = avatar;
 		this.phone = phone;
 		this.address = address;
+		
 		this.roleId = roleId;
 	}
 	
-	public User(String email, String fullname, String password, String avatar, String phone,
+	public User(String email, String fullname, String password, String avatar, String phone, boolean isPremium,
 			int roleId) {
 		super();
 		this.email = email;
@@ -99,6 +100,7 @@ public class User {
 		this.password = password;
 		this.avatar = avatar;
 		this.phone = phone;
+		this.isPremium = isPremium;
 		this.roleId = roleId;
 	}
 	

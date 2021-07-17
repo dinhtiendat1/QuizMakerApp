@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import com.huflit.dto.CategoryDto;
 import com.huflit.dto.ExamDto;
 import com.huflit.dto.ExamPackageDto;
 import com.huflit.dto.QuestionPackageDto;
@@ -39,9 +40,13 @@ public class ExamServiceImpl implements ExamService {
 	public List<ExamDto> findAll() {
 		
 		List<ExamDto> dtos = new ArrayList<ExamDto>();
+		ExamDto dto = null;
+		CategoryDto cateDto = null;
 		
 		for (Exam entity : examRepository.findAll()) {
-			ExamDto dto = new ExamDto(entity.getId(), entity.getTitle(), entity.getTime(), entity.getCategoryId(), entity.getLastUpdate(), entity.getCreateDate());
+			cateDto = new CategoryDto(entity.getCategoryId(), entity.getCategory().getName(), entity.getCategory().getIcon());
+			dto = new ExamDto(entity.getId(), entity.getTitle(), entity.getTime(), cateDto, entity.getLastUpdate(), entity.getCreateDate());
+
 			dtos.add(dto);
 		}
 		
@@ -51,8 +56,11 @@ public class ExamServiceImpl implements ExamService {
 	@Override
 	public ExamDto findById(int id) {
 		Exam entity = examRepository.getById(id);
-		
-		return new ExamDto(entity.getId(), entity.getTitle(), entity.getTime(), entity.getCategoryId(), entity.getLastUpdate(), entity.getCreateDate());
+		ExamDto dto = null;
+		CategoryDto cateDto = null;
+		cateDto = new CategoryDto(entity.getCategoryId(), entity.getCategory().getName(), entity.getCategory().getIcon());
+		dto = new ExamDto(entity.getId(), entity.getTitle(), entity.getTime(), cateDto, entity.getLastUpdate(), entity.getCreateDate());
+		return dto;
 	}
 
 	@Override
@@ -63,7 +71,7 @@ public class ExamServiceImpl implements ExamService {
 		SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyy");
 		String strDate = formatter.format(date);
 		System.out.println(strDate);
-		Exam entity = new Exam(dto.getTitle(), dto.getTime(), dto.getCategoryId(), strDate, strDate);
+		Exam entity = new Exam(dto.getTitle(), dto.getTime(), dto.getCategory().getId(), strDate, strDate);
 		
 		int examId = examRepository.saveAndFlush(entity).getId();
 		UserExamPK userExamPK = new UserExamPK(userId, examId, 0);
@@ -99,6 +107,23 @@ public class ExamServiceImpl implements ExamService {
 	public void delete(int id) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public List<ExamDto> findByGroupId(int groupId) {
+		List<ExamDto> dtos = new ArrayList<ExamDto>();
+		ExamDto dto = null;
+		CategoryDto cateDto = null;
+		System.out.println(examRepository.findByGroupId(groupId));
+		for(Exam entity : examRepository.findByGroupId(groupId)) {
+			System.out.println(entity.getId());
+			cateDto = new CategoryDto(entity.getCategoryId(), entity.getCategory().getName(), entity.getCategory().getIcon());
+			dto = new ExamDto(entity.getId(), entity.getTitle(), entity.getTime(), cateDto, entity.getLastUpdate(), entity.getCreateDate());
+			
+			dtos.add(dto);
+		}
+		
+		return dtos;
 	}
 
 }
