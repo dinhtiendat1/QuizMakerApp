@@ -123,6 +123,19 @@ public class GroupController {
 		return new ResponseEntity<Object>(message ,HttpStatus.BAD_REQUEST);
 	}
 	
+	@PostMapping("/join/groupCode/{groupCode}")
+	public Object join(@PathVariable("groupCode") String code) {
+		String message;
+		try {
+			groupService.joinByGroupCode(code);
+			return new ResponseEntity<Object>(HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			message = e.getMessage();
+		}
+		return new ResponseEntity<Object>(message ,HttpStatus.BAD_REQUEST);
+	}
+	
 	@PostMapping("/exam")
 	public Object exam(@RequestBody GroupExamDto dto) {
 		String message;

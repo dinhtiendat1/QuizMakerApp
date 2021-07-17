@@ -42,4 +42,15 @@ public class UserController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
+	@PutMapping("/premium")
+	public Object put() {
+		try {
+			userService.updatePremium();
+			return new ResponseEntity<Object>(HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+	}
+	
 }

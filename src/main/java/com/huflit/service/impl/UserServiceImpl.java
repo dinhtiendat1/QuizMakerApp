@@ -7,11 +7,13 @@ import javax.transaction.Transactional;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.context.annotation.Scope;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.huflit.dto.EditPasswordDto;
 import com.huflit.dto.RegisterDto;
 import com.huflit.dto.UpdateUserDto;
+import com.huflit.dto.UserDetailsDto;
 import com.huflit.dto.UserDto;
 import com.huflit.dto.UserPackageDto;
 import com.huflit.entity.User;
@@ -119,6 +121,19 @@ public class UserServiceImpl implements UserService {
 		entity.setPassword(hashed);
 		
 		userRepository.save(entity);
+	}
+
+	@Override
+	public void updatePremium() {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		int userId = ((UserDetailsDto) principal).getId();
+		
+		User entity = userRepository.getById(userId);
+		
+		entity.setPremium(true);
+		
+		userRepository.save(entity);
+		
 	}
  
 	

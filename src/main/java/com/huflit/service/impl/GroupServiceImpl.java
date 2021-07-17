@@ -166,6 +166,19 @@ public class GroupServiceImpl implements GroupService {
 		
 	}
 
+	@Override
+	public void joinByGroupCode(String code) {
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		int userId = ((UserDetailsDto) principal).getId();
+		
+		int groupId = groupRepository.findByGroupCode(code).getId();
+		UserGroupPK pk = new UserGroupPK(userId, groupId);
+		
+		UserGroup userGroup = new UserGroup(pk);
+		userGroupRepository.save(userGroup);
+		
+	}
+
 	
 
 }

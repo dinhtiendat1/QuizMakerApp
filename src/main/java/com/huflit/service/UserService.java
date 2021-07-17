@@ -27,4 +27,6 @@ public interface UserService {
 	int countByEmail(String email);
 	
 	void editPassword(EditPasswordDto dto);
+	
+	void updatePremium();
 }

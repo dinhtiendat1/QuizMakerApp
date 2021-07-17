@@ -57,6 +57,9 @@ public class User {
 	@Column(name = "role_id")
 	private int roleId;
 	
+	@Column(name = "premium")
+	private boolean isPremium;
+	
 	@ManyToOne
 	@JoinColumn(name = "role_id", insertable = false, updatable = false)
 	private Role role;

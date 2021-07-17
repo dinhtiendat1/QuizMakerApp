@@ -26,4 +26,6 @@ public interface GroupRepository extends JpaRepository<Group, Integer>{
 			+ "WHERE ug.id.userId = :id "
 			+ "AND g.name LIKE '%:name%' ")
 	List<Group> findByNameOfMyGroup(@Param("id") Integer id, @Param("name") String name);
+	
+	Group findByGroupCode(String groupCode);
 }

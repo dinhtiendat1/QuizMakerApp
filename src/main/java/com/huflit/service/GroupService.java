@@ -28,4 +28,6 @@ public interface GroupService {
 	void leave(int id);
 	
 	void addExam(GroupExamDto dto);
+	
+	void joinByGroupCode(String code);
 }
