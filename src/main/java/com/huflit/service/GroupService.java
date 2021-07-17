@@ -3,6 +3,7 @@ package com.huflit.service;
 import java.util.List;
 
 import com.huflit.dto.GroupDto;
+import com.huflit.dto.GroupExamDto;
 
 public interface GroupService {
 
@@ -25,4 +26,6 @@ public interface GroupService {
 	void join(int id);
 	
 	void leave(int id);
+	
+	void addExam(GroupExamDto dto);
 }

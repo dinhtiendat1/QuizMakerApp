@@ -36,4 +36,11 @@ public class GroupExam implements Serializable {
 	@JoinColumn(name = "exam_id", insertable = false, updatable = false)
 	private Exam exam;
 
+	public GroupExam(GroupExamPK id) {
+		super();
+		this.id = id;
+	}
+	
+	
+
 }

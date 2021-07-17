@@ -20,9 +20,11 @@ import com.huflit.dto.ExamDto;
 import com.huflit.dto.ExamPackageDto;
 import com.huflit.dto.QuestionDto;
 import com.huflit.dto.QuestionPackageDto;
+import com.huflit.dto.QuestionTypeExamDto;
 import com.huflit.dto.RoleDto;
 import com.huflit.service.ExamService;
 import com.huflit.service.QuestionService;
+import com.huflit.service.QuestionTypeExamService;
 
 @RestController
 @Scope("prototype")
@@ -32,6 +34,9 @@ public class ExamController {
 
 	@Autowired
 	private ExamService examService;
+	
+	@Autowired
+	private QuestionTypeExamService questionTypeServiceExam;
 	
 	@GetMapping("")
 	public Object get() {
@@ -54,22 +59,33 @@ public class ExamController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
-	@PostMapping("/package")
-	public Object postPkg(@RequestBody ExamPackageDto body) {
-		try {
+//	@PostMapping("/package")
+//	public Object postPkg(@RequestBody ExamPackageDto body) {
+//		try {
 //			examService.add(body);
-			return new ResponseEntity<Object>(HttpStatus.OK);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
-	}
+//			return new ResponseEntity<Object>(HttpStatus.OK);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+//	}
 	
 	@GetMapping("/{id}")
 	public Object get(@PathVariable("id") int id) {
 		try {
 			ExamDto dto = examService.findById(id);
 			return new ResponseEntity<Object>(dto, HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+	}
+	
+	@PostMapping("/addQuestion")
+	public Object addQuestion(@RequestBody List<QuestionTypeExamDto> body) {
+		try {
+			questionTypeServiceExam.addQuestion(body);
+			return new ResponseEntity<Object>(HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

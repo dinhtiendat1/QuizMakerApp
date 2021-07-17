@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.huflit.dto.GroupDto;
+import com.huflit.dto.GroupExamDto;
 import com.huflit.service.GroupService;
 
 @RestController
@@ -115,6 +116,19 @@ public class GroupController {
 		try {
 			groupService.join(id);
 			return new ResponseEntity<Object>(HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			message = e.getMessage();
+		}
+		return new ResponseEntity<Object>(message ,HttpStatus.BAD_REQUEST);
+	}
+	
+	@PostMapping("/exam")
+	public Object exam(@RequestBody GroupExamDto dto) {
+		String message;
+		try {
+			groupService.addExam(dto);
+			return new ResponseEntity<Object>(HttpStatus.CREATED);
 		} catch (Exception e) {
 			e.printStackTrace();
 			message = e.getMessage();

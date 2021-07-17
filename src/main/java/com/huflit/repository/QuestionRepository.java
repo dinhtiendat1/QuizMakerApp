@@ -25,5 +25,13 @@ public interface QuestionRepository extends JpaRepository<Question, Integer>{
 			+ "WHERE qt.id = :questionTypeId ")
 	List<Question> findByQuestionTypeId(@Param("questionTypeId") Integer questionTypeId);
 	
+	@Query("SELECT q FROM Question q "
+			+ "INNER JOIN ExamQuestion eq ON q.id = eq.id.questionId "
+			+ "WHERE eq.id.examId = :examId ")
+	List<Question> findByExamId(@Param("examId") Integer examId);
+	
 	List<Question> findByStatusTrue();
+	
+	@Query(value = "SELECT id FROM questions WHERE question_type_id = :questionTypeId ORDER BY RAND() LIMIT :questionNumber", nativeQuery = true)
+	List<Integer> findRandom(@Param("questionTypeId") int questionTypeId,@Param("questionNumber") int questionNumber);
 }

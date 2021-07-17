@@ -35,5 +35,11 @@ public class ExamQuestion implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "question_id", insertable = false, updatable = false)
 	private Question question;
+
+	public ExamQuestion(ExamQuestionPK id) {
+		super();
+		this.id = id;
+	}
+	
 	
 }

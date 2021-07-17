@@ -11,11 +11,15 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import com.huflit.dto.GroupDto;
+import com.huflit.dto.GroupExamDto;
 import com.huflit.dto.UserDetailsDto;
 import com.huflit.dto.UserDto;
 import com.huflit.entity.Group;
+import com.huflit.entity.GroupExam;
+import com.huflit.entity.GroupExamPK;
 import com.huflit.entity.UserGroup;
 import com.huflit.entity.UserGroupPK;
+import com.huflit.repository.GroupExamRepository;
 import com.huflit.repository.GroupRepository;
 import com.huflit.repository.UserGroupRepository;
 import com.huflit.service.GroupService;
@@ -30,6 +34,9 @@ public class GroupServiceImpl implements GroupService {
 	
 	@Autowired
 	private UserGroupRepository userGroupRepository;
+	
+	@Autowired
+	private GroupExamRepository groupExamRepository;
 	
 	@Override
 	public List<GroupDto> findAll() {
@@ -143,6 +150,19 @@ public class GroupServiceImpl implements GroupService {
 		int userId = ((UserDetailsDto) principal).getId();
 		
 		userGroupRepository.deleteByUserIdAndGroupId(userId, id);
+		
+	}
+
+	@Override
+	public void addExam(GroupExamDto dto) {
+		
+		GroupExamPK groupExamPK = null;
+		GroupExam groupExam = null;
+		
+		groupExamPK = new GroupExamPK(dto.getExamId(), dto.getGroupId());
+		groupExam = new GroupExam(groupExamPK);
+		
+		groupExamRepository.save(groupExam);
 		
 	}
 

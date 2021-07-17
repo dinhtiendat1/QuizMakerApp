@@ -6,13 +6,15 @@ import com.huflit.dto.QuestionTypeExamDto;
 
 public interface QuestionTypeExamService {
 
-	List<QuestionTypeExamDto> findAll();
+//	List<QuestionTypeExamDto> findAll();
+//	
+//	QuestionTypeExamDto findById(int id);
+//	
+//	void add(QuestionTypeExamDto dto);
+//	
+//	void edit(QuestionTypeExamDto dto);
+//	
+//	void delete(int id);
 	
-	QuestionTypeExamDto findById(int id);
-	
-	void add(QuestionTypeExamDto dto);
-	
-	void edit(QuestionTypeExamDto dto);
-	
-	void delete(int id);
+	void addQuestion(List<QuestionTypeExamDto> dtos);
 }

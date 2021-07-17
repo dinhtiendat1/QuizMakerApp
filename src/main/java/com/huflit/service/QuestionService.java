@@ -15,6 +15,8 @@ public interface QuestionService {
 	
 	List<QuestionPackageDto> findByQuestionTypeId(int id);
 	
+	List<QuestionPackageDto> findByExamId(int id);
+	
 	void add(QuestionDto dto);
 	
 	void add(QuestionPackageDto dto);

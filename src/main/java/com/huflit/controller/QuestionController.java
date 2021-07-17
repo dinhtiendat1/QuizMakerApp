@@ -119,4 +119,15 @@ public class QuestionController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
+	@GetMapping("examId/{id}")
+	public Object getByExamId(@PathVariable("id") int id) {
+		try {
+			List<QuestionPackageDto> dtos = questionService.findByExamId(id);
+			return new ResponseEntity<Object>(dtos, HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+	}
+	
 }

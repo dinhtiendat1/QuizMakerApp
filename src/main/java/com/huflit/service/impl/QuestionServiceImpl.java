@@ -127,4 +127,28 @@ public class QuestionServiceImpl implements QuestionService{
 		return pkgDtos;
 	}
 
+	@Override
+	public List<QuestionPackageDto> findByExamId(int id) {
+		List<QuestionPackageDto> pkgDtos = new ArrayList<QuestionPackageDto>();
+		
+		for(Question entity : questionRepository.findByQuestionTypeId(id)) {
+			QuestionPackageDto pkgDto = new QuestionPackageDto();
+			pkgDto.setId(entity.getId());
+			pkgDto.setContent(entity.getContent());
+//			pkgDto.setExamId(entity.getExamId());
+			pkgDto.setQuestionTypeId(entity.getQuestionTypeId());
+			
+			List<AnswerDto> dtos = new ArrayList<AnswerDto>();
+			
+			for(Answer a : answerRepository.findByQuestionId(pkgDto.getId())) {
+				
+				AnswerDto dto = new AnswerDto(a.getId(),a.getContent(), a.getQuestionId(), a.isTrue());
+				dtos.add(dto);
+			}
+			pkgDto.setAnswers(dtos);
+			pkgDtos.add(pkgDto);
+		}
+		return pkgDtos;
+	}
+
 }

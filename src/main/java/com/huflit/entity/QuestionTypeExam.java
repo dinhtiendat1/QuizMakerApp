@@ -38,6 +38,12 @@ public class QuestionTypeExam implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "question_type_id", insertable = false, updatable = false)
 	private QuestionType questionType;
+
+	public QuestionTypeExam(QuestionTypeExamPK id, int number) {
+		super();
+		this.id = id;
+		this.number = number;
+	}
 	
 	
 }
