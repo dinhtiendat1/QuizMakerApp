@@ -38,8 +38,8 @@ public class UserSecurityConfig extends WebSecurityConfigurerAdapter {
 		.hasRole("USER")
 		.antMatchers("/api/users/**")
 		.hasRole("USER")
-//		.antMatchers("/api/user/profile", "/api/user/password", "/api/user/updateAvatar")
-		.anyRequest()
+		.antMatchers("/api/user/profile", "/api/user/password", "/api/user/updateAvatar")
+//		.anyRequest()
 		.authenticated()
 		;
 
