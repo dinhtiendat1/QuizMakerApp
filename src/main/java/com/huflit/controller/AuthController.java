@@ -21,7 +21,7 @@ import com.huflit.dto.UserPackageDto;
 
 @RestController
 @RequestMapping("api/auth")
-@CrossOrigin
+//@CrossOrigin
 public class AuthController {
 
 	private UserService userService;
