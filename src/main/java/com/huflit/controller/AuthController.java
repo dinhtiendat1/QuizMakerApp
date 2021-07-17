@@ -81,5 +81,16 @@ public class AuthController {
 		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 	}
 	
+	@GetMapping("/{email}")
+	public Object post(@PathVariable("email") String email) {
+		try {
+			System.out.println(email);
+			int number = userService.countByEmail(email);
+			return new ResponseEntity<Object>(number, HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+	}
 	
 }
