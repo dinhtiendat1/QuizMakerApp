@@ -31,7 +31,7 @@ public class ModSecurityConfig extends WebSecurityConfigurerAdapter{
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable()
+		http.cors().and().csrf().disable()
 		.antMatcher("/api/mod/**") // link gui len phai bat dau voi /api thi moi duoc chap nhan
 		.authorizeRequests()
 		.antMatchers("/api/mod/login")
